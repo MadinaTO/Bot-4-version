@@ -23,15 +23,17 @@ async def quiz_1(message: types.Message):
     button_call_1 = InlineKeyboardButton('NEXT', callback_data='button_call_1')
     markup.add(button_call_1)
 
-    question = 'Какое пиво ты любишь?'
+    question = 'Какой мем изображен на фото?'
     answers = [
-        'Svetloe',
-        'Svetloe no filter',
-        'Svetloe filter',
-        'Temnoe',
-        'Temnoe filter',
-        'Temnoe no filter'
+        'Маленький Пепе',
+        'Лягушонок Пепе',
+        'Апу апустая',
+        'Все ответы правильные'
     ]
+
+    photo = open('media/img_1.png', 'rb')
+    await bot.send_photo(message.from_user.id, photo=photo)
+
     await bot.send_poll(
         chat_id=message.from_user.id,
         question=question,
@@ -39,8 +41,8 @@ async def quiz_1(message: types.Message):
         is_anonymous=False,
         type='quiz',
         correct_option_id=1,
-        explanation='tasty',
-        open_period=10,
+        explanation='Все ответы правильные',
+        open_period=20,
         reply_markup=markup
     )
 
@@ -66,8 +68,8 @@ async def quiz_2(call: types.CallbackQuery):
         is_anonymous=False,
         type='quiz',
         correct_option_id=2,
-        explanation='France',
-        open_period=10
+        explanation='Париж',
+        open_period=20
     )
 
 
