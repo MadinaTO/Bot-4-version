@@ -1,3 +1,11 @@
-hellooo
-git branch
-git branch name
+новая ветка
+git branch - состояние в н.в. ветки
+git branch 'name' - создается новая ветка
+git checkout - переход к другой ветке
+
+git merge 'name of branch' - слияние с другой веткой, нынешняя ветка перенимает все обновления другой ветки
+
+как запушить на гит
+git add .
+git commit -m 'comment'
+git push origin 'name of branch' - название ветки, которую захочешь запушить
