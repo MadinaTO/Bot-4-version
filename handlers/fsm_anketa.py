@@ -8,7 +8,6 @@ from keybords import client_kb
 class FSMAdmin(StatesGroup):
     name = State()
     age = State()
-    photo = State()
     gender = State()
     region = State()
     submit = State()
