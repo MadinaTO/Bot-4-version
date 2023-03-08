@@ -8,7 +8,6 @@ from keybords import client_kb
 class FSMAdmin(StatesGroup):
     name = State()
     age = State()
-    photo = State()
     gender = State()
     region = State()
     submit = State()
@@ -42,14 +41,14 @@ async def load_age(message: types.Message, state: FSMContext):
             data['age'] = message.text
         await FSMAdmin.next()
         await message.answer("Gender?",
-                             reply_markup=client_kb.cancel_markup)
+                             reply_markup=client_kb.gender_markup)
 
 
 async def load_gender(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['gender'] = message.text
     await FSMAdmin.next()
-    await message.answer("Where are u from?", reply_markup=client_kb.gender_markup)
+    await message.answer("Where are u from?", reply_markup=client_kb.cancel_markup)
 
 
 async def load_region(message: types.Message, state: FSMContext):
