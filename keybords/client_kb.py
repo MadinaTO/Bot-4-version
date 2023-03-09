@@ -21,16 +21,6 @@ start_markup.add(start_button, info_button, quiz_button,
 
 cancel_button = KeyboardButton("CANCEL")
 
-submit_markup = ReplyKeyboardMarkup(
-    resize_keyboard=True,
-    one_time_keyboard=True
-).add(
-    KeyboardButton("Yeah"),
-    KeyboardButton("Repeat"),
-    cancel_button
-)
-
-
 gender_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True
